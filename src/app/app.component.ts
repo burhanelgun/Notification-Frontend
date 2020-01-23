@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-import { WebSocketAPI } from './WebSocketAPI';
 
 @Component({
   selector: 'app-root',
@@ -16,37 +15,14 @@ export class AppComponent {
   triggerGroup:string;
   cronExpression:string;
   interval:string;
-  webSocketAPI: WebSocketAPI;
-  greeting: any;
-  name: string;
 
 
   constructor(private httpClient: HttpClient,private router: Router) {
 
   }
 
-
   ngOnInit() {
-    this.webSocketAPI = new WebSocketAPI(new AppComponent(this.httpClient,this.router));
   }
-
-  connect(){
-    this.webSocketAPI._connect();
-  }
-
-  disconnect(){
-    this.webSocketAPI._disconnect();
-  }
-
-  sendMessage(){
-    this.webSocketAPI._send(this.name);
-  }
-
-  handleMessage(message){
-    this.greeting = message;
-  }
-
-
 
   createCronJob():void {
 
@@ -171,5 +147,26 @@ export class AppComponent {
     
     
           }
+          shutDownNotification():void {
 
+            const formData = new FormData();
+            formData.append('jobName', this.jobName);
+            formData.append('jobGroup', this.jobGroup);
+      
+             this.httpClient.get(`http://localhost:8080/api/shutDownNotification`).subscribe(
+                (data:any)=>{
+                  if(data=="Signed in"){
+                    this.router.navigate(['create-new-job']);
+      
+      
+                  }
+                  else{
+                    this.router.navigate(['joblist']);
+                  }
+      
+      
+                });
+      
+      
+            }
 }
