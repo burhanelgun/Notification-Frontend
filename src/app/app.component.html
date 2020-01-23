@@ -30,6 +30,64 @@
       </div>
 
     </div>
+
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="pauseJob()" color="primary" >Pause Notification Job</button>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="resumeJob()" color="primary" >Resume Notification Job</button>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="interruptJob()" color="primary" >Interrupt Notification Job</button>
+      </div>
+
+    </div>
+
+
+
   </mat-tab>
 
   <mat-tab label="Simple Trigger">
@@ -60,6 +118,65 @@
       </div>
 
     </div>
+
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="pauseJob()" color="primary" >Pause Notification Job</button>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="resumeJob()" color="primary" >Resume Notification Job</button>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="example-container">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobName" placeholder="Job Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="jobGroup" placeholder="Job Group">
+      </mat-form-field>
+
+      <div class="sign-button">
+      <button mat-raised-button (click)="interruptJob()" color="primary" >Interrupt Notification Job</button>
+      </div>
+
+    </div>
+
+
+
+
   </mat-tab>
 
 </mat-tab-group>
